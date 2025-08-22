@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+  <link rel="stylesheet" href="../css/signup.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  
+</head>
+  <body>
+      <div class="wrapper">
+
+
+            <div class="container">
+              <h2>Signin</h2>
+              <form action="/signup" method="POST">       
+                 <!-- autocomplete="off"  -->
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Enter your password" required>
+
+                <label>Password:</label>
+                <input type="password" name="confirmpassword" placeholder="Enter confirm password " required>
+
+
+                <button type="submit">Signup</button>
+              </form>
+
+              <div class="login-link">
+                i have already have an account? <a href="/login">Login</a>
+              </div>
+
+            </div>
+
+      </div>
+
+       <% if (typeof message !== 'undefined') { %>
+        <script>
+          Swal.fire({
+            toast: true,
+            position: "top",     
+            icon: "<%= type %>",
+            title: "<%= message %>",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            width: "300px"         
+          });
+        </script>
+      <% } %>
+
+
+  </body>
+</html>

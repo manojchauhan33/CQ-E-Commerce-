@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    }
+
+    button {
+      background-color: #050709;;
+      color: white;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffb347;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="form-container">
+    <h1>Add New Product</h1>
+
+    <form action="/add-product" method="POST" enctype="multipart/form-data">
+      <label>Product Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Description:</label>
+      <textarea name="description"></textarea>
+
+      <label>Price:</label>
+      <input type="number" name="price" required>
+
+      <label>Category:</label>
+      <input type="text" name="category">
+
+      <label>Stock:</label>
+      <input type="number" name="stock" value="1">
+
+      <label>Image:</label>
+      <input type="file" name="image" accept="image/*" required>
+
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  
+</head>
+  <body>
+      <div class="wrapper">
+
+
+            <div class="container">
+              <h2>login</h2>
+              <form action="/login" method="POST">       
+            
+
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Enter your password" required>
+
+
+                <button type="submit">login</button>
+              </form>
+
+              <div class="login-link">
+                i have no account ? <a href="/signup">signup</a>
+              </div>
+
+              <div class="login-link">
+               <a href="/forgot">forgot password</a>
+              </div>
+
+
+            </div>
+
+      </div>
+      <% if (typeof message !== 'undefined') { %>
+        <script>
+          Swal.fire({
+            toast: true,
+            position: "top",     
+            icon: "<%= type %>",
+            title: "<%= message %>",
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            width: "300px"         
+          });
+        </script>
+      <% } %>
+  </body>
+</html>
