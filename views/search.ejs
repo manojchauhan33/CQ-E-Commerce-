@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/css/products.css">
+</head>
+
+<body>
+  <%- include("partials/header") %>
+
+  <main>
+    <p>Found <%= products.length %> results</p>
+    <h3>Results for <%= query %></h3>
+
+    <% if (products.length > 0) { %>
+    <div class="products-grid">
+        <% products.forEach(product => { %>
+        <div class="product-card">
+            <img src="/uploads/<%= product.image %>" alt="<%= product.name %>">
+            <h3><%= product.name %></h3>
+            <p>₹<%= product.price %></p>
+            <a href="/cart/add/<%= product._id %>">Add to Cart</a>
+        </div>
+        <% }) %>
+    </div>
+    <% } else { %>
+    <p><%= query %> is not found</p>
+    <% } %>
+
+  </main>
+<!-- 
+  <%- include("partials/footer") %> -->
+</body>
+</html>

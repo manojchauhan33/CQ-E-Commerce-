@@ -13,13 +13,79 @@
 
   <main>
 
+    <div class="categories">
+  <div class="category-card">
+    <a href="/categories/electronics">
+      <img src="../banner/electronics.jpeg" alt="Electronics">
+      <span>Electronics</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/fashion">
+      <img src="../banner/clothing.jpeg" alt="Fashion">
+      <span>clothing</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/books">
+      <img src="../banner/books.jpeg" alt="Books">
+      <span>Stationery</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/healthcare">
+      <img src="../banner/healthcare.jpeg" alt="Healthcare">
+      <span>Healthcare</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/sports">
+      <img src="../banner/sports.jpeg" alt="Sports">
+      <span>Sports</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/furniture">
+      <img src="../banner/ferniture.jpeg" alt="Furniture">
+      <span>Furniture</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/grocery">
+      <img src="../banner/grocery.jpeg" alt="Grocery">
+      <span>Grocery</span>
+    </a>
+  </div>
+
+  <div class="category-card">
+    <a href="/categories/kitchen">
+      <img src="../banner/kitchen.jpeg" alt="Kitchen">
+      <span>Kitchen</span>
+    </a>
+  </div>
+</div>
+
+
+    <section class="banner">
+      <div class="banner-content">
+        <!-- <h2>best electronics</h2> -->
+        <a href="/categories/elect" class="banner-btn">Shop Now</a>
+      </div>
+    </section>
+
     <div class="products-grid">
       <% products.forEach(product => { %>
         <div class="product-card">
           <% if(product.image) { %>
             <img src="/uploads/<%= product.image %>" alt="<%= product.name %>" class="product-image">
           <% } else { %>
-            <img src="/uploads/placeholder.jpg" alt="Placeholder" class="product-image">
+            <img src="" alt="Placeholder" class="product-image">
           <% } %>
 
           <div class="product-info">

@@ -10,4 +10,5 @@ router.get("/", authenticate, products);
 
 router.get("/:id", getProduct);
 
+
 export default router;

@@ -23,11 +23,19 @@ import logoutRoutes from "./routes/logoutRoutes.js";
 import addProductRoute from "./routes/addProductRoutes.js"
 import allProductRoute from "./routes/allProductRoutes.js"
 import profileRoutes from "./routes/profileRoutes.js"
-import homeRoutes from "./routes/homeRoutes.js";
+import checkoutRoutes from "./routes/checkoutRoutes.js"
+import orderRoutes from "./routes/ordersRoutes.js"
+import allOrdersRoutes from "./routes/allOrdersRoutes.js"
+import allusersRoute from './routes/allusersRoutes.js'
+import categoryRoutes from './routes/categoryRoutes.js';
+import searchRoutes from './routes/searchRoutes.js';
+
 
 app.use(bodyParser.urlencoded({
   extended: true,
 }));
+
+
 
 
 
@@ -72,7 +80,12 @@ app.use('/logout', logoutRoutes);
 app.use('/add-product',addProductRoute);
 app.use('/all-product', allProductRoute);
 app.use('/profile', profileRoutes);
-app.use('/home',homeRoutes);
+app.use('/checkout',checkoutRoutes);
+app.use('/orders',orderRoutes);
+app.use('/all-orders',allOrdersRoutes);
+app.use('/all-users',allusersRoute);
+app.use('/categories', categoryRoutes);
+app.use('/search', searchRoutes);
 
 
 
@@ -80,3 +93,5 @@ app.use('/home',homeRoutes);
 app.listen(3000, () => {
   console.log(`${process.env.PORT}`);
 });
+
+

@@ -92,7 +92,8 @@ const login = async (req, res) => {
       });
     }
 
-    // Prevent login if email not verified
+    
+
     if (!user.isVerified) {
       return res.render('login', {
         message: 'Please verify your email before logging in',
@@ -100,7 +101,8 @@ const login = async (req, res) => {
       });
     }
 
-    // Check password
+  
+    
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.render('login', { 
@@ -109,18 +111,25 @@ const login = async (req, res) => {
       });
     }
 
-    // Generate JWT token
+
+
+    // generating  JWT token
+
     const token = jwt.sign(
       { _id: user._id, email: user.email, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
     );
 
-    // Set cookie
+
+
+    
     res.cookie('token', token, {
       httpOnly: true,
       maxAge: 60 * 60 * 1000 // 1 hour
     });
+
+    // console.log(cookie.email);
 
     // Redirect after successful login
     return res.redirect('/products');

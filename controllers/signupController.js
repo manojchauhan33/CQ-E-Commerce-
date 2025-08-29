@@ -159,14 +159,16 @@ const signup = async (req, res) => {
         });
       } 
 
+      
       else {
         await User.deleteOne({ _id: existUser._id });
       }
     }
 
-    
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const token = crypto.randomBytes(32).toString('hex');
+
+    const hashedPassword = await bcrypt.hash(password, 10);  // reason to write await is it is a computationally expensive operation
+
+    const token = crypto.randomBytes(32).toString('hex'); 
 
 
 
@@ -204,3 +206,7 @@ const signup = async (req, res) => {
 };
 
 export { signup };
+
+
+
+

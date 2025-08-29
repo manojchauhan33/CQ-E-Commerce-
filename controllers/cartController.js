@@ -9,7 +9,10 @@ const addToCart = async (req, res) => {
     const userId = req.user._id;   
     const productId = req.params.id;
 
-    let cart = await Cart.findOne({ userId });
+    let cart = await Cart.findOne({ 
+      userId 
+    });
+
 
     if (!cart) {
       cart = new Cart({ userId, items: [] });
@@ -20,7 +23,7 @@ const addToCart = async (req, res) => {
 
 
     if (existing) {
-      existing.quantity += 1;
+      existing.quantity += 1;       //ek element ko jitne bar add to card kroge utni bar quantity badh jaegi
     } else {
       cart.items.push({ productId, quantity: 1 });
     }

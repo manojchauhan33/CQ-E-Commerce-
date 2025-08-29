@@ -36,11 +36,14 @@ import Product from "../models/product.js";
     res.redirect("/products");
 
     
-  } catch (err) {
-    console.error("Error adding product:", err);
+  } 
+  
+  catch (err) {
+    // console.error(err);
     res.status(500).send("Error adding product");
   }
 };
+
 
 
 export {addProduct};
